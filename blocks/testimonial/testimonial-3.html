@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonial Section | Centered Grid | Style Three</title>
+<style>
+body {
+margin: 0;
+background: #fff;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+.testimonial-section {
+max-width: 1200px;
+margin: 0 auto;
+padding: 4rem 2rem;
+}
+.testimonial-heading {
+font-size: 2rem;
+font-weight: 600;
+color: #111;
+margin: 0 0 0.5rem 0;
+text-align: center;
+}
+.testimonial-subheading {
+font-size: 1.125rem;
+color: #333;
+margin: 0 0 3rem 0;
+text-align: center;
+}
+.testimonial-grid {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 2rem;
+}
+.testimonial-card {
+background: #f9f9f9;
+border-radius: 24px;
+padding: 2rem 1.5rem;
+box-shadow: 0 12px 28px rgba(0,0,0,0.03), 0 0 1px rgba(0,0,0,0.1);
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+flex: 1 1 280px;
+max-width: 350px;
+}
+.testimonial-card:hover {
+transform: scale(1.02);
+box-shadow: 0 20px 32px rgba(0,0,0,0.06), 0 0 1px rgba(0,0,0,0.15);
+}
+.testimonial-stars {
+display: flex;
+gap: 4px;
+margin-bottom: 1.2rem;
+color: #f5b342;
+font-size: 1.2rem;
+}
+.testimonial-text {
+margin: 0 0 1.5rem 0;
+color: #2d2d3a;
+line-height: 1.6;
+font-size: 1rem;
+}
+.testimonial-author {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+}
+.testimonial-avatar {
+width: 52px;
+height: 52px;
+border-radius: 50%;
+object-fit: cover;
+border: 2px solid white;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.author-name {
+margin: 0;
+font-weight: 600;
+color: #1e1e2f;
+font-size: 1.125rem;
+}
+.author-title {
+margin: 4px 0 0;
+color: #5a5a6e;
+font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<section class="testimonial-section">
+<h2 class="testimonial-heading">Testimonials</h2>
+<p class="testimonial-subheading">What our clients are saying</p>
+<div class="testimonial-grid">
+<div class="testimonial-card">
+<div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">This template saved me hours of work. The components are clean, responsive, and exactly what our team needed. Five stars.</p>
+<div class="testimonial-author">
+<img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="avatar" class="testimonial-avatar">
+<div>
+<p class="author-name">Jessie Du</p>
+<p class="author-title">Product Designer</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">We used this for our landing page. The testimonial layout adapts perfectly on mobile, and the inline style approach made tweaking a breeze.</p>
+<div class="testimonial-author">
+<img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="avatar" class="testimonial-avatar">
+<div>
+<p class="author-name">Marcus Chen</p>
+<p class="author-title">Startup Founder</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">Super clean code, no external dependencies. I appreciate the attention to font stack and the flexible card layout. Will definitely reuse.</p>
+<div class="testimonial-author">
+<img src="https://images.pexels.com/photos/1821095/pexels-photo-1821095.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="avatar" class="testimonial-avatar">
+<div>
+<p class="author-name">Samira Reyes</p>
+<p class="author-title">Frontend Developer</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">Our users love the clean look. Being able to scroll horizontally keeps the section compact yet full of social proof. Brilliant.</p>
+<div class="testimonial-author">
+<img src="https://images.pexels.com/photos/3256826/pexels-photo-3256826.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="avatar" class="testimonial-avatar">
+<div>
+<p class="author-name">Taylor Lee</p>
+<p class="author-title">Marketing Lead</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">Finally a testimonial section that doesn't wrap into a million rows. The styled scrollbar is a subtle but excellent detail.</p>
+<div class="testimonial-author">
+<img src="https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="avatar" class="testimonial-avatar">
+<div>
+<p class="author-name">Nina Patel</p>
+<p class="author-title">Content Strategist</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body>
+</html>
