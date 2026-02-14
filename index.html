@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanilla Codes – Free HTML Website Templates</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background-color:#ffffff;color:#0a0a0a;line-height:1.5;}
+.container{max-width:1280px;margin:0 auto;padding:0 32px;}
+/* header */
+header{padding:24px 0;border-bottom:1px solid #eaeaea;position:relative;}
+.header-flex{display:flex;justify-content:space-between;align-items:center;}
+.logo img{display:block;width:140px;height:auto;}
+.nav-links{display:flex;gap:40px;}
+.nav-links a{text-decoration:none;color:#2b2b2b;font-size:1rem;font-weight:500;}
+.nav-links a:hover{color:#000;}
+.header-cta{background-color:transparent;color:#1a1a1a;padding:10px 24px;border-radius:40px;text-decoration:none;font-size:0.95rem;font-weight:500;border:1px solid #d0d0d0;transition:0.2s;}
+.header-cta:hover{border-color:#000;}
+.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+.mobile-menu-btn svg{width:24px;height:24px;stroke:#000;stroke-width:2;}
+.mobile-nav{display:none;position:absolute;top:100%;left:0;width:100%;background-color:#fff;padding:24px 32px;border-bottom:1px solid #eaeaea;box-shadow:0 4px 12px rgba(0,0,0,0.04);z-index:100;}
+.mobile-nav a{display:block;text-decoration:none;color:#2b2b2b;font-size:1.1rem;font-weight:500;padding:12px 0;border-bottom:1px solid #f0f0f0;}
+.mobile-nav a:last-child{border-bottom:none;}
+.mobile-nav a:hover{color:#000;}
+.mobile-nav.active{display:block;}
+/* hero */
+.hero{padding:80px 0 100px;}
+.hero-grid{display:flex;flex-direction:column;gap:60px;}
+.hero-row{display:flex;align-items:center;justify-content:space-between;gap:60px;}
+.hero-content{flex:1;text-align:center;max-width:800px;margin-left:auto;margin-right:auto;}
+.hero-content h1{font-size:3.8rem;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-bottom:24px;color:#000;}
+.hero-content p{font-size:1.25rem;color:#4a4a4a;margin-bottom:32px;font-weight:400;max-width:400px;margin-left:auto;margin-right:auto;}
+.hero-buttons{display:flex;gap:16px;justify-content:center;}
+.primary-btn{background-color:#000;color:#fff;padding:14px 34px;border-radius:40px;text-decoration:none;font-weight:500;border:1px solid #000;transition:0.2s;}
+.primary-btn:hover{background-color:#fff;color:#000;}
+.secondary-btn{background-color:transparent;color:#1a1a1a;padding:14px 34px;border-radius:40px;text-decoration:none;font-weight:500;border:1px solid #d0d0d0;transition:0.2s;}
+.secondary-btn:hover{border-color:#000;}
+/* footer */
+footer{background-color:#f9f9f9;padding:48px 0;border-top:1px solid #ececec;}
+.footer-flex{display:flex;justify-content:space-between;align-items:center;}
+.social-links{display:flex;gap:24px;}
+.social-links a{text-decoration:none;color:#4a4a4a;font-size:0.95rem;}
+.social-links a:hover{color:#000;}
+.copyright{color:#6a6a6a;font-size:0.9rem;}
+@media (max-width:900px){
+.hero-row{flex-direction:column;align-items:flex-start;gap:32px;}
+.hero-content h1{font-size:2.8rem;}
+.hero-content p{max-width:100%;}
+.nav-links{display:none;}
+.header-cta{display:none;}
+.mobile-menu-btn{display:block;}
+.header-flex{gap:16px;}
+.footer-flex{flex-direction:column-reverse;gap:24px;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="container header-flex">
+<a href="/" class="logo"><img src="https://res.cloudinary.com/dqhawdcol/image/upload/v1771081497/kvso2b6gqucqahl8jmbg.svg" alt="vanilla codes"></a>
+<div class="nav-links">
+<a href="#">About</a>
+<a href="#">Blog</a>
+</div>
+<a href="#" class="header-cta">Star on GitHub</a>
+<button class="mobile-menu-btn" id="menuToggle" aria-label="Menu">
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+</button>
+</div>
+<div class="mobile-nav" id="mobileNav">
+<a href="#">About</a>
+<a href="#">Blog</a>
+<a href="#" style="color:#000;font-weight:600;">Star on GitHub</a>
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="container hero-grid">
+<div class="hero-row">
+<div class="hero-content">
+<h1>Starter code <i>for</i> <br>expert websites</h1>
+<p>Ship world-class vanilla websites super fast with responsive HTML, CSS and JS codes.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container footer-flex">
+<div class="copyright">© <span id="current-year"></span> vanilla codes.</div>
+<div class="social-links">
+<a href="#">Contact</a>
+<a href="#">GitHub</a>
+</div>
+</div>
+</footer>
+<script>
+document.getElementById('current-year').innerText = new Date().getFullYear();
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const mobileNav = document.getElementById('mobileNav');
+menuToggle.addEventListener('click', () => {
+mobileNav.classList.toggle('active');
+});
+</script>
+</body>
+</html>
