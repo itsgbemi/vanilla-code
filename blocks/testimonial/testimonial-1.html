@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonial Section | Auto-swipe</title>
+<style>
+body {
+margin: 0;
+background: #fff;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+.testimonial-section {
+max-width: 1200px;
+margin: 0 auto;
+padding: 4rem 2rem;
+}
+.testimonial-heading {
+font-size: 2rem;
+font-weight: 600;
+color: #111;
+margin: 0 0 0.5rem 0;
+text-align: center;
+}
+.testimonial-subheading {
+font-size: 1.125rem;
+color: #333;
+margin: 0 0 3rem 0;
+text-align: center;
+}
+.testimonial-carousel {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1.5rem;
+}
+.testimonial-grid {
+display: flex;
+overflow: hidden;
+width: 100%;
+justify-content: center;
+}
+.testimonial-card {
+background: #f9f9f9;
+border-radius: 24px;
+padding: 2rem 1.5rem;
+box-shadow: 0 20px 32px rgba(0,0,0,0.04), 0 0 1px rgba(0,0,0,0.1);
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+flex: 0 0 auto;
+width: 800px;
+max-width: 90%;
+box-sizing: border-box;
+}
+.testimonial-card:hover {
+transform: scale(1.02);
+box-shadow: 0 28px 40px rgba(0,0,0,0.08), 0 0 1px rgba(0,0,0,0.15);
+}
+.testimonial-stars {
+display: flex;
+gap: 4px;
+margin-bottom: 1.2rem;
+color: #f5b342;
+font-size: 1.2rem;
+}
+.testimonial-text {
+margin: 0 0 1.5rem 0;
+color: #2d2d3a;
+line-height: 1.6;
+font-size: 1.1rem;
+max-width: 600px;
+}
+.testimonial-author {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.8rem;
+}
+.testimonial-avatar {
+width: 64px;
+height: 64px;
+border-radius: 50%;
+object-fit: cover;
+border: 3px solid white;
+box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+.author-name {
+margin: 0;
+font-weight: 600;
+color: #1e1e2f;
+font-size: 1.25rem;
+}
+.author-title {
+margin: 6px 0 0;
+color: #5a5a6e;
+font-size: 1rem;
+}
+.navigation-dots {
+display: flex;
+gap: 1rem;
+justify-content: center;
+margin-top: 0.8rem;
+}
+.dot {
+width: 14px;
+height: 14px;
+border-radius: 50%;
+background-color: #d0d0d0;
+border: none;
+padding: 0;
+cursor: pointer;
+transition: background-color 0.2s, transform 0.15s;
+}
+.dot.active {
+background-color: #f5b342;
+transform: scale(1.3);
+}
+.dot:hover {
+background-color: #b0b0b0;
+}
+</style>
+</head>
+<body>
+<section class="testimonial-section">
+<h2 class="testimonial-heading">Testimonials</h2>
+<p class="testimonial-subheading">What our clients are saying</p>
+<div class="testimonial-carousel" id="testimonialCarousel">
+<div class="testimonial-grid" id="testimonialGrid">
+<div class="testimonial-card" data-index="0">
+<div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">This template saved me hours of work. The components are clean, responsive, and exactly what our team needed. Five stars.</p>
+<div class="testimonial-author">
+<img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="avatar" class="testimonial-avatar">
+<div>
+<p class="author-name">Jessie Du</p>
+<p class="author-title">Product Designer</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card" data-index="1">
+<div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">We used this for our landing page. The testimonial layout adapts perfectly on mobile, and the inline style approach made tweaking a breeze.</p>
+<div class="testimonial-author">
+<img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="avatar" class="testimonial-avatar">
+<div>
+<p class="author-name">Marcus Chen</p>
+<p class="author-title">Startup Founder</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card" data-index="2">
+<div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">Super clean code, no external dependencies. I appreciate the attention to font stack and the flexible card layout. Will definitely reuse.</p>
+<div class="testimonial-author">
+<img src="https://images.pexels.com/photos/1821095/pexels-photo-1821095.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="avatar" class="testimonial-avatar">
+<div>
+<p class="author-name">Samira Reyes</p>
+<p class="author-title">Frontend Developer</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card" data-index="3">
+<div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">Our users love the clean look. Being able to scroll horizontally keeps the section compact yet full of social proof. Brilliant.</p>
+<div class="testimonial-author">
+<img src="https://images.pexels.com/photos/3256826/pexels-photo-3256826.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="avatar" class="testimonial-avatar">
+<div>
+<p class="author-name">Taylor Lee</p>
+<p class="author-title">Marketing Lead</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card" data-index="4">
+<div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">Finally a testimonial section that doesn't wrap into a million rows. The styled scrollbar is a subtle but excellent detail.</p>
+<div class="testimonial-author">
+<img src="https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="avatar" class="testimonial-avatar">
+<div>
+<p class="author-name">Nina Patel</p>
+<p class="author-title">Content Strategist</p>
+</div>
+</div>
+</div>
+</div>
+<div class="navigation-dots" id="navigationDots"></div>
+</div>
+</section>
+<script>
+(function() {
+const cards = document.querySelectorAll('.testimonial-card');
+const dotsContainer = document.getElementById('navigationDots');
+const carousel = document.getElementById('testimonialCarousel');
+let currentIndex = 0;
+let autoSwipeInterval = null;
+const INTERVAL_MS = 4000;
+cards.forEach((_, idx) => {
+const dot = document.createElement('button');
+dot.classList.add('dot');
+dot.setAttribute('aria-label', `Go to testimonial ${idx + 1}`);
+dot.dataset.index = idx;
+dot.addEventListener('click', function() {
+window.manualTrigger = true;
+const idx = parseInt(this.dataset.index);
+showCard(idx);
+});
+dotsContainer.appendChild(dot);
+});
+const dots = document.querySelectorAll('.dot');
+function showCard(index) {
+if (index < 0 || index >= cards.length) return;
+cards.forEach(card => { card.style.display = 'none'; });
+cards[index].style.display = 'flex';
+dots.forEach(dot => dot.classList.remove('active'));
+dots[index].classList.add('active');
+currentIndex = index;
+if (window.manualTrigger) {
+if (autoSwipeInterval) {
+clearInterval(autoSwipeInterval);
+autoSwipeInterval = null;
+}
+autoSwipeInterval = setInterval(nextCard, INTERVAL_MS);
+window.manualTrigger = false;
+}
+}
+function nextCard() {
+window.manualTrigger = false;
+let nextIndex = (currentIndex + 1) % cards.length;
+showCard(nextIndex);
+}
+function startAutoSwipe() {
+if (autoSwipeInterval) clearInterval(autoSwipeInterval);
+autoSwipeInterval = setInterval(nextCard, INTERVAL_MS);
+}
+carousel.addEventListener('mouseenter', function() {
+if (autoSwipeInterval) {
+clearInterval(autoSwipeInterval);
+autoSwipeInterval = null;
+}
+});
+carousel.addEventListener('mouseleave', function() {
+if (!autoSwipeInterval) {
+autoSwipeInterval = setInterval(nextCard, INTERVAL_MS);
+}
+});
+window.manualTrigger = false;
+showCard(0);
+startAutoSwipe();
+})();
+</script>
+</body>
+</html>
