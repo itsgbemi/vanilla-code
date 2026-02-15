@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanilla Code – Free HTML Website Templates</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+background-color: #ffffff;
+color: #0a0a0a;
+line-height: 1.5;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+.container {
+max-width: 1280px;
+margin: 0 auto;
+padding: 0 32px;
+width: 100%;
+}
+main {
+flex: 1 0 auto;
+}
+header {
+padding: 24px 0;
+border-bottom: 1px solid #eaeaea;
+position: relative;
+background-color: #fff;
+}
+.header-flex {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.logo img {
+display: block;
+width: 140px;
+height: auto;
+}
+.nav-links {
+display: flex;
+gap: 40px;
+}
+.nav-links a {
+text-decoration: none;
+color: #2b2b2b;
+font-size: 1rem;
+font-weight: 500;
+}
+.nav-links a:hover {
+color: #000;
+}
+.header-cta {
+text-decoration: none;
+font-size: 0.95rem;
+padding: 8px 18px;
+border-radius: 30px;
+border: 1px solid #2e7d32;
+background: rgba(255,255,255,0.95);
+color: #2e7d32;
+font-weight: 500;
+transition: all 0.15s ease;
+backdrop-filter: blur(4px);
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+display: inline-flex;
+align-items: center;
+gap: 6px;
+text-transform: capitalize;
+}
+.header-cta:hover {
+transform: scale(0.96);
+background: rgba(255,255,255,0.98);
+border-color: #1b5e20;
+color: #1b5e20;
+}
+.mobile-menu-btn {
+display: none;
+background: none;
+border: none;
+cursor: pointer;
+padding: 8px;
+width: 40px;
+height: 40px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 6px;
+}
+.menu-bar {
+display: block;
+width: 24px;
+height: 2px;
+background-color: #000;
+border-radius: 2px;
+transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.mobile-menu-btn.active .menu-bar:nth-child(1) {
+transform: translateY(4px) rotate(45deg);
+}
+.mobile-menu-btn.active .menu-bar:nth-child(2) {
+transform: translateY(-4px) rotate(-45deg);
+}
+.mobile-nav {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+background-color: #fff;
+padding: 24px 32px;
+border-bottom: 1px solid #eaeaea;
+box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+z-index: 100;
+text-align: center;
+}
+.mobile-nav a {
+display: block;
+text-decoration: none;
+color: #2b2b2b;
+font-size: 1.1rem;
+font-weight: 500;
+padding: 12px 0;
+}
+.mobile-nav a:hover {
+color: #000;
+}
+.mobile-nav.active {
+display: block;
+}
+.mobile-cta {
+display: inline-block !important;
+text-decoration: none !important;
+font-size: 0.95rem !important;
+padding: 8px 18px !important;
+border-radius: 30px !important;
+border: 1px solid #2e7d32 !important;
+background: rgba(255,255,255,0.95) !important;
+color: #2e7d32 !important;
+font-weight: 500 !important;
+transition: all 0.15s ease !important;
+backdrop-filter: blur(4px) !important;
+box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+margin-top: 16px !important;
+width: fit-content !important;
+margin-left: auto !important;
+margin-right: auto !important;
+text-transform: capitalize !important;
+}
+.mobile-cta:hover {
+transform: scale(0.96) !important;
+background: rgba(255,255,255,0.98) !important;
+border-color: #1b5e20 !important;
+color: #1b5e20 !important;
+}
+.hero {
+padding: 80px 0 100px;
+}
+.hero-content {
+flex: 1;
+text-align: center;
+max-width: 450px;
+margin-left: auto;
+margin-right: auto;
+}
+.hero-content h1 {
+font-size: 3.8rem;
+font-weight: 500;
+letter-spacing: -0.02em;
+line-height: 1.1;
+margin-bottom: 24px;
+color: #000;
+}
+.hero-content p {
+font-size: 1.25rem;
+color: #4a4a4a;
+margin-bottom: 32px;
+font-weight: 400;
+margin-left: auto;
+margin-right: auto;
+}
+.inner-nav {
+border-bottom: 1px solid #eaeaea;
+}
+.inner-nav-links {
+display: flex;
+gap: 48px;
+justify-content: center;
+padding: 16px 32px;
+}
+.inner-nav-links a {
+text-decoration: none;
+color: #2b2b2b;
+font-weight: 500;
+font-size: 1rem;
+letter-spacing: 0.3px;
+padding-bottom: 14px;
+border-bottom: 2px solid transparent;
+}
+.inner-nav-links a.active {
+font-weight: 700;
+border-bottom-color: #000;
+}
+.inner-nav-links a:hover {
+color: #000;
+}
+.template-section {
+padding: 56px 0 32px;
+border-bottom: 1px solid #f0f0f0;
+}
+.section-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 24px;
+}
+.section-header h2 {
+font-weight: 500;
+font-size: 1.8rem;
+letter-spacing: -0.01em;
+}
+.section-header .count {
+color: #6a6a6a;
+margin-left: 12px;
+font-weight: 400;
+font-size: 1.2rem;
+}
+.header-controls {
+display: flex;
+gap: 8px;
+}
+.arrow-btn {
+background: transparent;
+border: 1px solid #d0d0d0;
+border-radius: 30px;
+width: 44px;
+height: 44px;
+cursor: pointer;
+color: #1a1a1a;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+transition: 0.15s;
+padding: 0;
+}
+.arrow-btn svg {
+width: 24px;
+height: 24px;
+fill: currentColor;
+}
+.arrow-btn:hover {
+border-color: #000;
+background-color: #fff;
+}
+.card-row {
+display: flex;
+gap: 40px;
+overflow-x: auto;
+scroll-behavior: smooth;
+padding: 8px 12px 16px;
+scrollbar-width: none; 
+-ms-overflow-style: none; 
+}
+.card-row::-webkit-scrollbar {
+display: none; 
+}
+.card {
+flex: 0 0 400px;
+border-radius: 15px;
+background: transparent;
+overflow: hidden;
+position: relative;
+aspect-ratio: 16/9;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.card-image {
+width: 100%;
+height: 100%;
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+position: relative;
+}
+.card-actions {
+position: absolute;
+bottom: 16px;
+right: 16px;
+display: flex;
+gap: 10px;
+z-index: 2;
+}
+.card-actions a {
+text-decoration: none;
+font-size: 0.95rem;
+padding: 8px 18px;
+border-radius: 30px;
+border: 1px solid rgba(255,255,255,0.9);
+background: rgba(255,255,255,0.95);
+color: #1a1a1a;
+font-weight: 500;
+transition: all 0.15s ease;
+backdrop-filter: blur(4px);
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+display: inline-flex;
+align-items: center;
+gap: 6px;
+text-transform: capitalize;
+cursor: pointer;
+}
+.card-actions a:last-child {
+border-color: #2e7d32;
+color: #2e7d32;
+background: rgba(255,255,255,0.95);
+}
+.card-actions a:last-child svg {
+stroke: #2e7d32;
+}
+.card-actions a:hover {
+transform: scale(0.96);
+background: rgba(255,255,255,0.98);
+border-color: currentColor;
+}
+.card-actions a:first-child:hover {
+color: #000;
+border-color: #000;
+}
+.card-actions a:last-child:hover {
+color: #1b5e20;
+border-color: #1b5e20;
+}
+.card-actions a:last-child:hover svg {
+stroke: #1b5e20;
+}
+.card-actions a svg {
+width: 16px;
+height: 15px;
+transition: transform 0.1s;
+}
+.card-actions a:hover svg {
+transform: scale(0.95);
+}
+/* Footer: white background, underlined links, no icons */
+footer {
+background-color: #ffffff;
+padding: 48px 0;
+border-top: 1px solid #ececec;
+flex-shrink: 0;
+}
+.footer-flex {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.social-links {
+display: flex;
+gap: 24px;
+}
+.social-links a {
+text-decoration: underline;
+color: #4a4a4a;
+font-size: 0.95rem;
+display: inline-flex;
+align-items: center;
+gap: 6px;
+}
+.social-links a:hover {
+color: #000;
+}
+.social-links svg {
+display: none;
+}
+.copyright {
+color: #6a6a6a;
+font-size: 0.9rem;
+}
+@media (max-width: 900px) {
+.hero-content h1 {
+font-size: 2.8rem;
+}
+.nav-links {
+display: none;
+}
+.header-cta {
+display: none;
+}
+.mobile-menu-btn {
+display: flex;
+}
+.header-flex {
+gap: 16px;
+}
+.footer-flex {
+flex-direction: column-reverse;
+gap: 24px;
+align-items: flex-start;
+}
+.inner-nav-links {
+gap: 24px;
+flex-wrap: wrap;
+}
+.section-header {
+flex-wrap: wrap;
+gap: 12px;
+}
+.card-row {
+gap: 24px;
+}
+}
+</style>
+<link rel="preload" as="image" href="https://res.cloudinary.com/dqhawdcol/image/upload/v1771081497/kvso2b6gqucqahl8jmbg.svg">
+</head>
+<body>
+<header>
+<div class="container header-flex">
+<a href="/" class="logo"><img src="https://res.cloudinary.com/dqhawdcol/image/upload/v1771081497/kvso2b6gqucqahl8jmbg.svg" alt="vanilla codes"></a>
+<div class="nav-links">
+<a href="#">About</a>
+<a href="#">Blog</a>
+</div>
+<a href="#" class="header-cta">Star on GitHub</a>
+<button class="mobile-menu-btn" id="menuToggle" aria-label="Menu">
+<span class="menu-bar"></span>
+<span class="menu-bar"></span>
+</button>
+</div>
+<div class="mobile-nav" id="mobileNav">
+<a href="#">About</a>
+<a href="#">Blog</a>
+<a href="#" class="mobile-cta">Star on GitHub</a>
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<h1>Starter code <i>for</i> expert websites</h1>
+<p>Ship world-class vanilla websites super fast with responsive HTML, CSS and JS codes.</p>
+</div>
+</div>
+</section>
+<div class="inner-nav">
+<div class="container inner-nav-links">
+<a href="#" class="active" id="blocksNav">Blocks</a>
+<a href="#" id="pagesNav">Pages</a>
+</div>
+</div>
+<!-- sections will be populated by javascript -->
+<section class="template-section" id="blocksSection" data-category="blocks"></section>
+<section class="template-section" id="blocksSection2" data-category="blocks"></section>
+<section class="template-section" id="blocksSection3" data-category="blocks"></section>
+
+<section class="template-section" id="pagesSection" data-category="pages" style="display: none;"></section>
+<section class="template-section" id="pagesSection2" data-category="pages" style="display: none;"></section>
+<section class="template-section" id="pagesSection3" data-category="pages" style="display: none;"></section>
+<section class="template-section" id="pagesSection4" data-category="pages" style="display: none;"></section>
+<section class="template-section" id="pagesSection5" data-category="pages" style="display: none;"></section>
+</main>
+<footer>
+<div class="container footer-flex">
+<div class="copyright">© <span id="current-year"></span> Vanilla Code.</div>
+<div class="social-links">
+<a href="mailto:hi@gbemisolaoyeniyi.com">Contact</a>
+<a href="https://github.com/itsgbemi/vanilla-code" target="_blank">GitHub</a>
+</div>
+</div>
+</footer>
+<script>
+document.getElementById('current-year').innerText = new Date().getFullYear();
+
+const menuToggle = document.getElementById('menuToggle');
+const mobileNav = document.getElementById('mobileNav');
+menuToggle.addEventListener('click', () => {
+menuToggle.classList.toggle('active');
+mobileNav.classList.toggle('active');
+});
+
+// ---------- Template data with unique image + file links ----------
+const templateCatalog = [
+  // blocks
+  { category: 'blocks', group: 'testimonial', displayName: 'Testimonial', count: 4, 
+    items: [
+      { id: 1, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771127699/cwsoo802mma9wamg2a2c.avif', preview: 'https://vanilla-code.netlify.app/blocks/testimonial/testimonial-1.html', download: 'https://res.cloudinary.com/dqhawdcol/raw/upload/v1771114166/oa0rffddp89gxukg1gon.html' },
+      { id: 2, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771127603/hpdl4vhmvkm2kiubtq8f.avif', preview: 'https://vanilla-code.netlify.app/blocks/testimonial/testimonial-2.html', download: 'https://res.cloudinary.com/dqhawdcol/raw/upload/v1771114166/oa0rffddp89gxukg1gon.html' },
+      { id: 3, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771127541/ezbb6sdpkkct8aff0aks.avif', preview: 'https://vanilla-code.netlify.app/blocks/testimonial/testimonial-3.html', download: 'https://res.cloudinary.com/dqhawdcol/raw/upload/v1771114166/oa0rffddp89gxukg1gon.html' },
+      { id: 4, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771112742/sample4.avif', preview: 'https://vanilla-code.netlify.app/blocks/testimonial/testimonial-4.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/blocks/testimonial/testimonial-4.html' }
+    ] },
+  { category: 'blocks', group: 'form', displayName: 'Form', count: 3,
+    items: [
+      { id: 1, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771126413/rtgptujfolbbqq8aq8pj.avif', preview: 'https://vanilla-code.netlify.app/blocks/form/form-1.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/blocks/form/form-1.html' },
+      { id: 2, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771125532/fbrj1ftfmn3xllfgbaqu.avif', preview: 'https://vanilla-code.netlify.app/blocks/form/form-2.html', download: 'https://res.cloudinary.com/dqhawdcol/raw/upload/v1771125586/gbhm8erbm4ukdijdzhwb.html' },
+      { id: 3, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771126526/ehku9ozjomgrsv9gj0sx.avif', preview: 'https://vanilla-code.netlify.app/blocks/form/form-3.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/blocks/form/form-3.html' }
+    ] },
+  { category: 'blocks', group: 'newsletter', displayName: 'Newsletter', count: 3,
+    items: [
+      { id: 1, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771112746/news1.avif', preview: 'https://vanilla-code.netlify.app/blocks/newsletter/newsletter-1.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/blocks/newsletter/newsletter-1.html' },
+      { id: 2, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771112747/news2.avif', preview: 'https://vanilla-code.netlify.app/blocks/newsletter/newsletter-2.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/blocks/newsletter/newsletter-2.html' },
+      { id: 3, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771112748/news3.avif', preview: 'https://vanilla-code.netlify.app/blocks/newsletter/newsletter-3.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/blocks/newsletter/newsletter-3.html' }
+    ] },
+  // pages
+  { category: 'pages', group: '404', displayName: '404', count: 1,
+    items: [
+      { id: 1, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771112749/404.avif', preview: 'https://vanilla-code.netlify.app/pages/404/404-1.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/pages/404/404-1.html' }
+    ] },
+  { category: 'pages', group: 'coming-soon', displayName: 'Coming Soon', count: 2,
+    items: [
+      { id: 1, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771112750/soon1.avif', preview: 'https://vanilla-code.netlify.app/pages/coming-soon/coming-soon-1.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/pages/coming-soon/coming-soon-1.html' },
+      { id: 2, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771112751/soon2.avif', preview: 'https://vanilla-code.netlify.app/pages/coming-soon/coming-soon-2.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/pages/coming-soon/coming-soon-2.html' }
+    ] },
+  { category: 'pages', group: 'about', displayName: 'About', count: 2,
+    items: [
+      { id: 1, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771112752/about1.avif', preview: 'https://vanilla-code.netlify.app/pages/about/about-1.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/pages/about/about-1.html' },
+      { id: 2, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771112753/about2.avif', preview: 'https://vanilla-code.netlify.app/pages/about/about-2.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/pages/about/about-2.html' }
+    ] },
+  { category: 'pages', group: 'contact', displayName: 'Contact', count: 2,
+    items: [
+      { id: 1, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771112754/contact1.avif', preview: 'https://vanilla-code.netlify.app/pages/contact/contact-1.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/pages/contact/contact-1.html' },
+      { id: 2, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771112755/contact2.avif', preview: 'https://vanilla-code.netlify.app/pages/contact/contact-2.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/pages/contact/contact-2.html' }
+    ] },
+  { category: 'pages', group: 'home', displayName: 'Home', count: 3,
+    items: [
+      { id: 1, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771112756/home1.avif', preview: 'https://vanilla-code.netlify.app/pages/home/home-1.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/pages/home/home-1.html' },
+      { id: 2, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771112757/home2.avif', preview: 'https://vanilla-code.netlify.app/pages/home/home-2.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/pages/home/home-2.html' },
+      { id: 3, image: 'https://res.cloudinary.com/dqhawdcol/image/upload/v1771112758/home3.avif', preview: 'https://vanilla-code.netlify.app/pages/home/home-3.html', download: 'https://github.com/itsgbemi/vanilla-code/raw/main/pages/home/home-3.html' }
+    ] }
+];
+
+// download function using fetch -> blob -> download
+async function downloadFile(url, filename) {
+  try {
+    const response = await fetch(url, { mode: 'cors' }); // raw github allows cors
+    if (!response.ok) throw new Error('download failed');
+    const blob = await response.blob();
+    const blobUrl = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = blobUrl;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(blobUrl);
+  } catch (e) {
+    // fallback: open url in new tab (will show raw)
+    window.open(url, '_blank');
+  }
+}
+
+function buildSectionHTML(groupInfo) {
+  const displayName = groupInfo.displayName;
+  const items = groupInfo.items;
+  const category = groupInfo.category;
+  const group = groupInfo.group;
+
+  let cardsHtml = '';
+  items.forEach(item => {
+    const previewLink = item.preview;
+    const downloadLink = item.download; // raw github link
+    const imageUrl = item.image;
+    // filename for download
+    const filename = `${category}-${group}-${item.id}.html`;
+
+    cardsHtml += `
+    <div class="card">
+      <div class="card-image" style="background-image: url('${imageUrl}');"></div>
+      <div class="card-actions">
+        <a href="${previewLink}" target="_blank" rel="noopener">Preview</a>
+        <a onclick="event.preventDefault(); downloadFile('${downloadLink}', '${filename}')" href="#" style="cursor: pointer;"><svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="template__link-icon"><path d="M6.09473 4.56131C6.40667 5.44389 7.24841 6.07622 8.23779 6.07622C9.22718 6.07622 10.0689 5.44389 10.3809 4.56131" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1.98273 12.5559C2.89138 13.6508 4.58256 13.6508 7.96486 13.6508H8.51114C11.8935 13.6508 13.5847 13.6508 14.4934 12.5559M1.98273 12.5559C1.07407 11.4611 1.38573 9.79882 2.00905 6.47442C2.45233 4.11027 2.67397 2.92819 3.51543 2.22984M14.4934 12.5559C15.402 11.4611 15.0903 9.79882 14.467 6.47442C14.0237 4.11027 13.8021 2.92819 12.9607 2.22984M12.9607 2.22984C12.1192 1.53149 10.9165 1.53149 8.51114 1.53149H7.96486C5.55956 1.53149 4.35689 1.53149 3.51543 2.22984" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg> Download</a>
+      </div>
+    </div>
+    `;
+  });
+
+  // generate a unique id for the card row to be used by arrow buttons
+  const rowId = `row-${category}-${group}`;
+
+  return `
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span style="display: flex; align-items: baseline;">
+          <h2 style="display: inline;">${displayName}</h2>
+          <span class="count">(${items.length})</span>
+        </span>
+      </div>
+      <div class="header-controls">
+        <button class="arrow-btn" aria-label="Previous" onclick="document.getElementById('${rowId}').scrollBy({left: -360, behavior: 'smooth'})"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+        <button class="arrow-btn" aria-label="Next" onclick="document.getElementById('${rowId}').scrollBy({left: 360, behavior: 'smooth'})"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>
+      </div>
+    </div>
+    <div class="card-row" id="${rowId}">
+      ${cardsHtml}
+    </div>
+  </div>
+  `;
+}
+
+// Inject sections
+const blocksSections = [
+  document.getElementById('blocksSection'),
+  document.getElementById('blocksSection2'),
+  document.getElementById('blocksSection3')
+];
+const pagesSections = [
+  document.getElementById('pagesSection'),
+  document.getElementById('pagesSection2'),
+  document.getElementById('pagesSection3'),
+  document.getElementById('pagesSection4'),
+  document.getElementById('pagesSection5')
+];
+
+const blocksItems = templateCatalog.filter(t => t.category === 'blocks');
+blocksSections.forEach((sec, idx) => {
+  if (idx < blocksItems.length) {
+    sec.innerHTML = buildSectionHTML(blocksItems[idx]);
+  }
+});
+
+const pagesItems = templateCatalog.filter(t => t.category === 'pages');
+pagesSections.forEach((sec, idx) => {
+  if (idx < pagesItems.length) {
+    sec.innerHTML = buildSectionHTML(pagesItems[idx]);
+  }
+});
+
+// Navigation
+const blocksNav = document.getElementById('blocksNav');
+const pagesNav = document.getElementById('pagesNav');
+
+function showBlocks() {
+  blocksNav.classList.add('active');
+  pagesNav.classList.remove('active');
+  document.getElementById('blocksSection').style.display = 'block';
+  document.getElementById('blocksSection2').style.display = 'block';
+  document.getElementById('blocksSection3').style.display = 'block';
+  document.getElementById('pagesSection').style.display = 'none';
+  document.getElementById('pagesSection2').style.display = 'none';
+  document.getElementById('pagesSection3').style.display = 'none';
+  document.getElementById('pagesSection4').style.display = 'none';
+  document.getElementById('pagesSection5').style.display = 'none';
+}
+
+function showPages() {
+  pagesNav.classList.add('active');
+  blocksNav.classList.remove('active');
+  document.getElementById('blocksSection').style.display = 'none';
+  document.getElementById('blocksSection2').style.display = 'none';
+  document.getElementById('blocksSection3').style.display = 'none';
+  document.getElementById('pagesSection').style.display = 'block';
+  document.getElementById('pagesSection2').style.display = 'block';
+  document.getElementById('pagesSection3').style.display = 'block';
+  document.getElementById('pagesSection4').style.display = 'block';
+  document.getElementById('pagesSection5').style.display = 'block';
+}
+
+blocksNav.addEventListener('click', (e) => {
+  e.preventDefault();
+  showBlocks();
+});
+
+pagesNav.addEventListener('click', (e) => {
+  e.preventDefault();
+  showPages();
+});
+
+showBlocks();
+
+// make downloadFile globally accessible for onclick
+window.downloadFile = downloadFile;
+</script>
+</body>
+</html>
