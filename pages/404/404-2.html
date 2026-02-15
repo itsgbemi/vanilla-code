@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 Page Not Found</title>
+<meta name="description" content="The page you requested could not be found">
+<meta name="robots" content="noindex, nofollow">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+html, body {
+height: 100%;
+width: 100%;
+overflow-x: hidden;
+}
+body {
+background: white;
+display: flex;
+justify-content: center;
+align-items: center;
+line-height: 1.6;
+}
+.container {
+max-width: 1200px;
+width: 100%;
+padding: 0 20px;
+}
+.error-row {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+gap: 2.5rem;
+flex-wrap: wrap;
+}
+.error-image {
+flex: 1 1 280px;
+max-width: 380px;
+min-width: 200px;
+/* Ensure the container itself is a square */
+aspect-ratio: 1 / 1;
+width: 100%;
+}
+.error-image img {
+width: 100%;
+height: 100%;
+display: block;
+/* 'contain' ensures the entire image fits within the square without cropping */
+object-fit: contain;
+/* Optional: add a very subtle background in case the image has transparency */
+background-color: transparent;
+}
+.error-text-group {
+flex: 1 1 400px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: center;
+text-align: left;
+max-width: 600px;
+}
+.error-text-group h1 {
+font-size: 5rem;
+color: #0c2d51;
+margin-bottom: 0;
+line-height: 1.1;
+}
+.error-text-group h2 {
+font-size: 1.5rem;
+color: #666;
+margin-bottom: 16px;
+font-weight: 400;
+}
+.cta-button {
+background: black;
+color: white;
+padding: 12px 30px;
+border-radius: 60px;
+text-decoration: none;
+font-weight: 600;
+font-size: 1rem;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+transition: background 0.3s;
+border: none;
+cursor: pointer;
+}
+.cta-button:hover {
+background: #333;
+}
+.cta-button svg {
+width: 18px;
+height: 18px;
+fill: white;
+}
+@media (max-width: 768px) {
+.error-row {
+flex-direction: column;
+gap: 0.5rem;
+}
+.error-text-group {
+align-items: flex-start;
+text-align: left;
+}
+.error-text-group h1 {
+font-size: 3rem;
+}
+.error-text-group h2 {
+font-size: 1.25rem;
+}
+.error-image {
+/* On mobile, the square container shrinks naturally */
+max-width: 300px;
+}
+}
+@media (max-width: 480px) {
+.error-text-group h1 {
+font-size: 2.8rem;
+}
+.error-row {
+gap: 0.25rem;
+}
+.error-image {
+max-width: 240px;
+}
+}
+</style>
+</head>
+<body>
+<main class="container">
+<section class="error-row">
+<div class="error-image">
+<img src="https://res.cloudinary.com/dqhawdcol/image/upload/v1771178014/j3lwlsr542lalrgug1so.avif" alt="404 illustration">
+</div>
+<div class="error-text-group">
+<h1>Oops!</h1>
+<h2>We couldn't find the page you were looking for.</h2>
+<a href="/" class="cta-button">
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path><path fill="#ffffff" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path></svg>
+Go home
+</a>
+</div>
+</section>
+</main>
+</body>
+</html>
