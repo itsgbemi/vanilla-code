@@ -3,56 +3,479 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Testimonial Section | Horizontal Scroll | Style One</title>
+<title>Testimonial Section | Horizontal Scroll</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+background: #fff;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+section {
+max-width: 100%;
+margin: 0;
+padding: 4rem 2rem;
+position: relative;
+}
+h2 {
+font-size: 2rem;
+font-weight: 600;
+color: #111;
+margin: 0 0 0.5rem 0;
+text-align: center;
+}
+.subtitle {
+font-size: 1.125rem;
+color: #333;
+margin: 0 0 3rem 0;
+text-align: center;
+}
+.scroll-wrapper {
+position: relative;
+display: flex;
+align-items: center;
+}
+.scroll-container {
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+overflow-x: auto;
+gap: 2rem;
+padding-bottom: 1.5rem;
+scrollbar-width: none;
+-webkit-overflow-scrolling: touch;
+scroll-behavior: smooth;
+}
+.scroll-container::-webkit-scrollbar {
+display: none;
+}
+.card {
+flex: 0 0 300px;
+background: #f9f9f9;
+border-radius: 24px;
+padding: 2rem 1.5rem;
+box-shadow: 0 12px 28px rgba(0,0,0,0.03), 0 0 1px rgba(0,0,0,0.1);
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+transform: scale(1.02);
+box-shadow: 0 20px 32px rgba(0,0,0,0.06), 0 0 1px rgba(0,0,0,0.15);
+}
+.profile {
+display: flex;
+align-items: center;
+gap: 1rem;
+margin-bottom: 1.5rem;
+}
+.avatar {
+width: 52px;
+height: 52px;
+background: linear-gradient(145deg,#e0e5ec,#f0f4fa);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 600;
+font-size: 1.5rem;
+color: #1e1e2f;
+}
+.info p:first-child {
+margin: 0;
+font-weight: 600;
+color: #1e1e2f;
+font-size: 1.125rem;
+}
+.info p:last-child {
+margin: 4px 0 0;
+color: #5a5a6e;
+font-size: 0.9rem;
+}
+.quote {
+margin: 0;
+color: #2d2d3a;
+line-height: 1.6;
+font-size: 1rem;
+}
+.stars {
+display: flex;
+gap: 4px;
+margin-top: 1.5rem;
+color: #f5b342;
+}
+.arrow {
+position: absolute;
+width: 44px;
+height: 44px;
+background: white;
+border: 1px solid #eaeaea;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+z-index: 10;
+transition: all 0.2s ease;
+user-select: none;
+}
+.arrow:hover {
+background: #f5f5f5;
+box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+transform: scale(1.05);
+}
+.arrow-left {
+left: -10px;
+}
+.arrow-right {
+right: -10px;
+}
+.arrow svg {
+width: 24px;
+height: 24px;
+fill: none;
+stroke: #1e1e2f;
+stroke-width: 2;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+@media (max-width: 640px) {
+.arrow {
+display: none;
+}
+}
+</style>
 </head>
-<body style="margin:0;background:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-<section style="max-width:100%;margin:0;padding:4rem 2rem;">
-<h2 style="font-size:2rem;font-weight:600;color:#111;margin:0 0 0.5rem 0;text-align:center;">Trusted by creators</h2>
-<p style="font-size:1.125rem;color:#333;margin:0 0 3rem 0;text-align:center;">Real stories from people we’re lucky to work with</p>
-<div style="display:flex;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:2rem;padding-bottom:1.5rem;scrollbar-width:thin;scrollbar-color:#aaa #f0f0f0;-webkit-overflow-scrolling:touch;">
-<div style="flex:0 0 300px;background:#f9f9f9;border-radius:24px;padding:2rem 1.5rem;box-shadow:0 12px 28px rgba(0,0,0,0.03),0 0 1px rgba(0,0,0,0.1);">
-<div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
-<div style="width:52px;height:52px;background:linear-gradient(145deg,#e0e5ec,#f0f4fa);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.5rem;color:#1e1e2f;">JD</div>
-<div><p style="margin:0;font-weight:600;color:#1e1e2f;font-size:1.125rem;">Jessie Du</p><p style="margin:4px 0 0;color:#5a5a6e;font-size:0.9rem;">Product Designer</p></div>
+<body>
+<section>
+<h2>Trusted by creators</h2>
+<p class="subtitle">Real stories from people we’re lucky to work with</p>
+<div class="scroll-wrapper">
+<div class="arrow arrow-left" onclick="document.querySelector('.scroll-container').scrollBy({left: -360, behavior: 'smooth'})">
+<svg viewBox="0 0 24 24">
+<path d="M15 18l-6-6 6-6"/>
+</svg>
 </div>
-<p style="margin:0;color:#2d2d3a;line-height:1.6;font-size:1rem;">"This template saved me hours of work. The components are clean, responsive, and exactly what our team needed. Five stars."</p>
-<div style="display:flex;gap:4px;margin-top:1.5rem;color:#f5b342;">⭐⭐⭐⭐⭐</div>
+<div class="arrow arrow-right" onclick="document.querySelector('.scroll-container').scrollBy({left: 360, behavior: 'smooth'})">
+<svg viewBox="0 0 24 24">
+<path d="M9 18l6-6-6-6"/>
+</svg>
 </div>
-<div style="flex:0 0 300px;background:#f9f9f9;border-radius:24px;padding:2rem 1.5rem;box-shadow:0 12px 28px rgba(0,0,0,0.03),0 0 1px rgba(0,0,0,0.1);">
-<div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
-<div style="width:52px;height:52px;background:linear-gradient(145deg,#e0e5ec,#f0f4fa);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.5rem;color:#1e1e2f;">MC</div>
-<div><p style="margin:0;font-weight:600;color:#1e1e2f;font-size:1.125rem;">Marcus Chen</p><p style="margin:4px 0 0;color:#5a5a6e;font-size:0.9rem;">Startup Founder</p></div>
+<div class="scroll-container">
+<div class="card">
+<div class="profile">
+<div class="avatar">JD</div>
+<div class="info">
+<p>Jessie Du</p>
+<p>Product Designer</p>
 </div>
-<p style="margin:0;color:#2d2d3a;line-height:1.6;font-size:1rem;">"We used this for our landing page. The testimonial layout adapts perfectly on mobile, and the inline style approach made tweaking a breeze."</p>
-<div style="display:flex;gap:4px;margin-top:1.5rem;color:#f5b342;">⭐⭐⭐⭐⭐</div>
 </div>
-<div style="flex:0 0 300px;background:#f9f9f9;border-radius:24px;padding:2rem 1.5rem;box-shadow:0 12px 28px rgba(0,0,0,0.03),0 0 1px rgba(0,0,0,0.1);">
-<div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
-<div style="width:52px;height:52px;background:linear-gradient(145deg,#e0e5ec,#f0f4fa);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.5rem;color:#1e1e2f;">SR</div>
-<div><p style="margin:0;font-weight:600;color:#1e1e2f;font-size:1.125rem;">Samira Reyes</p><p style="margin:4px 0 0;color:#5a5a6e;font-size:0.9rem;">Frontend Developer</p></div>
+<p class="quote">"This template saved me hours of work. The components are clean, responsive, and exactly what our team needed. Five stars."</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
 </div>
-<p style="margin:0;color:#2d2d3a;line-height:1.6;font-size:1rem;">"Super clean code, no external dependencies. I appreciate the attention to font stack and the flexible card layout. Will definitely reuse."</p>
-<div style="display:flex;gap:4px;margin-top:1.5rem;color:#f5b342;">⭐⭐⭐⭐⭐</div>
+<div class="card">
+<div class="profile">
+<div class="avatar">MC</div>
+<div class="info">
+<p>Marcus Chen</p>
+<p>Startup Founder</p>
 </div>
-<div style="flex:0 0 300px;background:#f9f9f9;border-radius:24px;padding:2rem 1.5rem;box-shadow:0 12px 28px rgba(0,0,0,0.03),0 0 1px rgba(0,0,0,0.1);">
-<div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
-<div style="width:52px;height:52px;background:linear-gradient(145deg,#e0e5ec,#f0f4fa);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.5rem;color:#1e1e2f;">TL</div>
-<div><p style="margin:0;font-weight:600;color:#1e1e2f;font-size:1.125rem;">Taylor Lee</p><p style="margin:4px 0 0;color:#5a5a6e;font-size:0.9rem;">Marketing Lead</p></div>
 </div>
-<p style="margin:0;color:#2d2d3a;line-height:1.6;font-size:1rem;">"Our users love the clean look. Being able to scroll horizontally keeps the section compact yet full of social proof. Brilliant."</p>
-<div style="display:flex;gap:4px;margin-top:1.5rem;color:#f5b342;">⭐⭐⭐⭐⭐</div>
+<p class="quote">"We used this for our landing page. The testimonial layout adapts perfectly on mobile, and the inline style approach made tweaking a breeze."</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
 </div>
-<div style="flex:0 0 300px;background:#f9f9f9;border-radius:24px;padding:2rem 1.5rem;box-shadow:0 12px 28px rgba(0,0,0,0.03),0 0 1px rgba(0,0,0,0.1);">
-<div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
-<div style="width:52px;height:52px;background:linear-gradient(145deg,#e0e5ec,#f0f4fa);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.5rem;color:#1e1e2f;">NP</div>
-<div><p style="margin:0;font-weight:600;color:#1e1e2f;font-size:1.125rem;">Nina Patel</p><p style="margin:4px 0 0;color:#5a5a6e;font-size:0.9rem;">Content Strategist</p></div>
+<div class="card">
+<div class="profile">
+<div class="avatar">SR</div>
+<div class="info">
+<p>Samira Reyes</p>
+<p>Frontend Developer</p>
 </div>
-<p style="margin:0;color:#2d2d3a;line-height:1.6;font-size:1rem;">"Finally a testimonial section that doesn't wrap into a million rows. The styled scrollbar is a subtle but excellent detail."</p>
-<div style="display:flex;gap:4px;margin-top:1.5rem;color:#f5b342;">⭐⭐⭐⭐⭐</div>
+</div>
+<p class="quote">"Super clean code, no external dependencies. I appreciate the attention to font stack and the flexible card layout. Will definitely reuse."</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+</div>
+<div class="card">
+<div class="profile">
+<div class="avatar">TL</div>
+<div class="info">
+<p>Taylor Lee</p>
+<p>Marketing Lead</p>
+</div>
+</div>
+<p class="quote">"Our users love the clean look. Being able to scroll horizontally keeps the section compact yet full of social proof. Brilliant."</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+</div>
+<div class="card">
+<div class="profile">
+<div class="avatar">NP</div>
+<div class="info">
+<p>Nina Patel</p>
+<p>Content Strategist</p>
+</div>
+</div>
+<p class="quote">"Finally a testimonial section that doesn't wrap into a million rows. The styled scrollbar is a subtle but excellent detail."</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+</div>
 </div>
 </div>
 </section>
-<style>/* styled scrollbar (webkit & standard) */ div[style*="overflow-x:auto"]::-webkit-scrollbar {height: 8px;} div[style*="overflow-x:auto"]::-webkit-scrollbar-track {background: #f0f0f0; border-radius: 20px;} div[style*="overflow-x:auto"]::-webkit-scrollbar-thumb {background: #aaa; border-radius: 20px; border: 2px solid #f0f0f0;} div[style*="overflow-x:auto"]::-webkit-scrollbar-thumb:hover {background: #888;}</style>
-<script>(function(){let cards=document.querySelectorAll('div[style*="background:#f9f9f9"]');cards.forEach(c=>{c.addEventListener('mouseenter',()=>{c.style.transform='scale(1.02)';c.style.transition='transform 0.2s ease, box-shadow 0.2s ease';c.style.boxShadow='0 20px 32px rgba(0,0,0,0.06), 0 0 1px rgba(0,0,0,0.15)';});c.addEventListener('mouseleave',()=>{c.style.transform='scale(1)';c.style.boxShadow='0 12px 28px rgba(0,0,0,0.03), 0 0 1px rgba(0,0,0,0.1)';});});})();</script>
+<script>
+(function(){
+let cards = document.querySelectorAll('.card');
+cards.forEach(c => {
+c.addEventListener('mouseenter', () => {
+c.style.transform = 'scale(1.02)';
+c.style.boxShadow = '0 20px 32px rgba(0,0,0,0.06), 0 0 1px rgba(0,0,0,0.15)';
+});
+c.addEventListener('mouseleave', () => {
+c.style.transform = 'scale(1)';
+c.style.boxShadow = '0 12px 28px rgba(0,0,0,0.03), 0 0 1px rgba(0,0,0,0.1)';
+});
+});
+})();
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonial Section | Horizontal Scroll</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+background: #fff;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+section {
+max-width: 100%;
+margin: 0;
+padding: 4rem 2rem;
+position: relative;
+}
+h2 {
+font-size: 2rem;
+font-weight: 600;
+color: #111;
+margin: 0 0 0.5rem 0;
+text-align: center;
+}
+.subtitle {
+font-size: 1.125rem;
+color: #333;
+margin: 0 0 3rem 0;
+text-align: center;
+}
+.scroll-wrapper {
+position: relative;
+display: flex;
+align-items: center;
+}
+.scroll-container {
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+overflow-x: auto;
+gap: 2rem;
+padding-bottom: 1.5rem;
+scrollbar-width: none;
+-webkit-overflow-scrolling: touch;
+scroll-behavior: smooth;
+}
+.scroll-container::-webkit-scrollbar {
+display: none;
+}
+.card {
+flex: 0 0 300px;
+background: #f9f9f9;
+border-radius: 24px;
+padding: 2rem 1.5rem;
+box-shadow: 0 12px 28px rgba(0,0,0,0.03), 0 0 1px rgba(0,0,0,0.1);
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+transform: scale(1.02);
+box-shadow: 0 20px 32px rgba(0,0,0,0.06), 0 0 1px rgba(0,0,0,0.15);
+}
+.profile {
+display: flex;
+align-items: center;
+gap: 1rem;
+margin-bottom: 1.5rem;
+}
+.avatar {
+width: 52px;
+height: 52px;
+background: linear-gradient(145deg,#e0e5ec,#f0f4fa);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 600;
+font-size: 1.5rem;
+color: #1e1e2f;
+}
+.info p:first-child {
+margin: 0;
+font-weight: 600;
+color: #1e1e2f;
+font-size: 1.125rem;
+}
+.info p:last-child {
+margin: 4px 0 0;
+color: #5a5a6e;
+font-size: 0.9rem;
+}
+.quote {
+margin: 0;
+color: #2d2d3a;
+line-height: 1.6;
+font-size: 1rem;
+}
+.stars {
+display: flex;
+gap: 4px;
+margin-top: 1.5rem;
+color: #f5b342;
+}
+.arrow {
+position: absolute;
+width: 44px;
+height: 44px;
+background: white;
+border: 1px solid #eaeaea;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+z-index: 10;
+transition: all 0.2s ease;
+user-select: none;
+}
+.arrow:hover {
+background: #f5f5f5;
+box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+transform: scale(1.05);
+}
+.arrow-left {
+left: -10px;
+}
+.arrow-right {
+right: -10px;
+}
+.arrow svg {
+width: 24px;
+height: 24px;
+fill: none;
+stroke: #1e1e2f;
+stroke-width: 2;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+@media (max-width: 640px) {
+.arrow {
+display: none;
+}
+}
+</style>
+</head>
+<body>
+<section>
+<h2>Trusted by creators</h2>
+<p class="subtitle">Real stories from people we’re lucky to work with</p>
+<div class="scroll-wrapper">
+<div class="arrow arrow-left" onclick="document.querySelector('.scroll-container').scrollBy({left: -360, behavior: 'smooth'})">
+<svg viewBox="0 0 24 24">
+<path d="M15 18l-6-6 6-6"/>
+</svg>
+</div>
+<div class="arrow arrow-right" onclick="document.querySelector('.scroll-container').scrollBy({left: 360, behavior: 'smooth'})">
+<svg viewBox="0 0 24 24">
+<path d="M9 18l6-6-6-6"/>
+</svg>
+</div>
+<div class="scroll-container">
+<div class="card">
+<div class="profile">
+<div class="avatar">JD</div>
+<div class="info">
+<p>Jessie Du</p>
+<p>Product Designer</p>
+</div>
+</div>
+<p class="quote">"This template saved me hours of work. The components are clean, responsive, and exactly what our team needed. Five stars."</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+</div>
+<div class="card">
+<div class="profile">
+<div class="avatar">MC</div>
+<div class="info">
+<p>Marcus Chen</p>
+<p>Startup Founder</p>
+</div>
+</div>
+<p class="quote">"We used this for our landing page. The testimonial layout adapts perfectly on mobile, and the inline style approach made tweaking a breeze."</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+</div>
+<div class="card">
+<div class="profile">
+<div class="avatar">SR</div>
+<div class="info">
+<p>Samira Reyes</p>
+<p>Frontend Developer</p>
+</div>
+</div>
+<p class="quote">"Super clean code, no external dependencies. I appreciate the attention to font stack and the flexible card layout. Will definitely reuse."</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+</div>
+<div class="card">
+<div class="profile">
+<div class="avatar">TL</div>
+<div class="info">
+<p>Taylor Lee</p>
+<p>Marketing Lead</p>
+</div>
+</div>
+<p class="quote">"Our users love the clean look. Being able to scroll horizontally keeps the section compact yet full of social proof. Brilliant."</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+</div>
+<div class="card">
+<div class="profile">
+<div class="avatar">NP</div>
+<div class="info">
+<p>Nina Patel</p>
+<p>Content Strategist</p>
+</div>
+</div>
+<p class="quote">"Finally a testimonial section that doesn't wrap into a million rows. The styled scrollbar is a subtle but excellent detail."</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+</div>
+</div>
+</div>
+</section>
+<script>
+(function(){
+let cards = document.querySelectorAll('.card');
+cards.forEach(c => {
+c.addEventListener('mouseenter', () => {
+c.style.transform = 'scale(1.02)';
+c.style.boxShadow = '0 20px 32px rgba(0,0,0,0.06), 0 0 1px rgba(0,0,0,0.15)';
+});
+c.addEventListener('mouseleave', () => {
+c.style.transform = 'scale(1)';
+c.style.boxShadow = '0 12px 28px rgba(0,0,0,0.03), 0 0 1px rgba(0,0,0,0.1)';
+});
+});
+})();
+</script>
 </body>
 </html>
