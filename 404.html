@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 Page Not Found</title>
+<meta name="description" content="The page you requested could not be found">
+<meta name="robots" content="noindex, nofollow">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+html, body {
+height: 100%;
+width: 100%;
+overflow-x: hidden;
+}
+body {
+background: white;
+display: flex;
+justify-content: center;
+align-items: center;
+line-height: 1.6;
+}
+.container {
+max-width: 1200px;
+width: 100%;
+padding: 0 20px;
+}
+.error-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 20px;
+}
+.error-content h1 {
+font-size: 5rem;
+color: #0c2d51;
+margin-bottom: 0;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+.error-content h2 {
+font-size: 1.5rem;
+color: #666;
+margin-bottom: 20px;
+font-weight: 400;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+.error-content p {
+font-size: 1.25rem;
+color: #666;
+margin-bottom: 40px;
+max-width: 600px;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+.cta-button {
+background: #f6d769;
+color: #0c2d51;
+padding: 12px 30px;
+border-radius: 60px;
+text-decoration: none;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-weight: 600;
+font-size: 1.2rem;
+display: inline-flex;
+align-items: center;
+gap: 5px;
+transition: background 0.3s;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+border: none;
+cursor: pointer;
+}
+.cta-button:hover {
+background: #eb9e4a;
+}
+@media (max-width: 768px) {
+.error-content h1 {
+font-size: 3rem;
+}
+.error-content h2 {
+font-size: 1.25rem;
+}
+.error-content p {
+font-size: 1rem;
+}
+}
+</style>
+</head>
+<body>
+<main class="container">
+<section class="error-content">
+<h1>Oops!</h1>
+<h2>404 - PAGE NOT FOUND</h2>
+<p>The page you are looking for might have been removed, had its name changed or temporarily unavailable.</p>
+<a href="/" class="cta-button">Go to homepage</a>
+</section>
+</main>
+</body>
+</html>
